@@ -1,0 +1,56 @@
+# Create a Category
+POST http://localhost:5000/categories
+Content-Type: application/json
+
+{
+  "name": "Trycycle",
+  "description": "For outdoor relaxation"
+}
+
+### Get all categories
+GET http://localhost:5000/categories
+Accept: application/json
+
+### Update a category
+PUT http://localhost:5000/categories/68c94425bde8f49fec292a2
+Content-Type: application/json
+
+{
+  "name": "Electronics",
+  "description": "Devices and gadgets for your home and office use"
+}
+
+
+### Create an item
+POST http://localhost:5000/items
+Content-Type: application/json
+
+{
+  "name": "Rolls Phantom",
+  "description": "Business and Vacation",
+  "price": 300000,
+  "quantity": 10,
+  "category": "68c95e466fcc57d223a576a2"
+}
+
+### Get all items
+GET http://localhost:5000/items
+Accept: application/json
+
+### Update Item
+PUT http://localhost:5000/items/68c94ab9a5da9b0e3b677638
+Content-Type: application/json
+
+{
+  "name": "Laptop",
+  "description": "Gaming Laptop",
+  "price": 1700,
+  "quantity": 3,
+  "category": "68c940425bde8f49fec292a2"
+}
+
+### Delete an item
+DELETE http://localhost:5000/items/68c95e696fcc57d223a576a4
+
+### Delete a category
+DELETE http://localhost:5000/categories/68c95e466fcc57d223a576a2
