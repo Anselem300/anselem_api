@@ -4,7 +4,6 @@ const itemsRouter = require("./routes/items");
 const categoriesRouter = require("./routes/categories")
 const bodyParser = require("body-parser");
 const app = express();
-const homeRoute = require("./routes/index")
 const cors = require("cors")
 const setupSwagger = require("./swagger")
 const mongoose = require("mongoose");
@@ -16,7 +15,6 @@ app.use(cors())
 app.use(bodyParser.json())
 
 // Routes
-app.use("/", homeRoute)
 app.use("/items", itemsRouter)
 app.use("/categories", categoriesRouter)
 
