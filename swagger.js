@@ -15,7 +15,7 @@ const options = {
         description: "Local development server",
       },
       {
-        url: "https://your-render-app-name.onrender.com",
+        url: "https://anselem-api.onrender.com",
         description: "Production server",
       },
     ],
