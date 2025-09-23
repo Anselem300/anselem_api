@@ -65,11 +65,12 @@
 const router = require("express").Router();
 const { getAllItems, createItem, getItemById, updateItem, deleteItem
  } = require("../controller/items")
+const { isAuthenticated } = require("../utilities/authenticate")
 
-router.get("/", getAllItems)
-router.get("/:id", getItemById)
-router.post("/", createItem)
-router.put("/:id", updateItem)
-router.delete("/:id", deleteItem)
+router.get("/", isAuthenticated, getAllItems)
+router.get("/:id", isAuthenticated, getItemById)
+router.post("/", isAuthenticated, createItem)
+router.put("/:id", isAuthenticated, updateItem)
+router.delete("/:id", isAuthenticated, deleteItem)
 
 module.exports = router;

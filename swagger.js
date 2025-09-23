@@ -7,7 +7,8 @@ const options = {
     info: {
       title: "Inventory API",
       version: "1.0.0",
-      description: "REST API for managing categories and items with full CRUD operations.",
+      description:
+        "REST API for managing categories and items with full CRUD operations. Item routes require authentication (session cookie).",
     },
     servers: [
       {
@@ -16,6 +17,15 @@ const options = {
       },
     ],
     components: {
+      securitySchemes: {
+        cookieAuth: {
+          type: "apiKey",
+          in: "cookie",
+          name: "connect.sid", // Default name used by express-session
+          description:
+            "Session cookie set after successful login (e.g., GitHub OAuth). Required for protected routes.",
+        },
+      },
       schemas: {
         Category: {
           type: "object",
@@ -58,6 +68,12 @@ const options = {
         },
       },
     },
+    // Optional: Apply cookieAuth globally. Comment this out if you want to apply per route in your route files.
+    security: [
+      {
+        cookieAuth: [],
+      },
+    ],
   },
   apis: ["./routes/*.js"], // Swagger will scan these files for route docs
 };

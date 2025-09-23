@@ -66,11 +66,12 @@ const express = require('express')
 const router = express.Router();
 const { getAllCategories, createCategory, getCategoryById, deleteCategory, 
     updateCategory } = require("../controller/categories");
+const { isAuthenticated } = require("../utilities/authenticate")
 
-router.get("/", getAllCategories);
-router.get("/:id", getCategoryById)
-router.post("/", createCategory);
-router.put("/:id", updateCategory)
-router.delete("/:id", deleteCategory)
+router.get("/", isAuthenticated, getAllCategories);
+router.get("/:id", isAuthenticated, getCategoryById)
+router.post("/", isAuthenticated, createCategory);
+router.put("/:id", isAuthenticated, updateCategory)
+router.delete("/:id", isAuthenticated, deleteCategory)
 
 module.exports = router;

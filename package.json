@@ -11,7 +11,7 @@
     "url": "git+https://github.com/Anselem300/anselem_api.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Anselem Samuel",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
@@ -23,7 +23,10 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
+    "express-session": "^1.18.2",
     "mongoose": "^8.18.1",
+    "passport": "^0.7.0",
+    "passport-github2": "^0.1.12",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1"
   }
